@@ -6,7 +6,7 @@ type PropsType = {
   item: {
     _id: string;
     title: string;
-    desc: string;
+    content: string;
     author: string;
     createdAt: string;
     imgUrl: string
@@ -14,10 +14,10 @@ type PropsType = {
     catSlug: string;
   };
 };
-const Card = ({ key, item }: PropsType) => {
+const BlogCard = ({ item }: PropsType) => {
   return (
     <div>
-      <div className="mb-12 flex items-center gap-12" key={key}>
+      <div className="mb-12 flex items-center gap-12" key={item._id}>
         {item.imgUrl && (
           <div className="flex-1 hidden lg:block h-[350px] relative">
             <Image src={item.imgUrl} alt="" fill className="object-cover" />
@@ -30,10 +30,10 @@ const Card = ({ key, item }: PropsType) => {
             </span>
             <span className="">{item.catSlug}</span>
           </div>
-          {/* <Link href={`/posts/${item.slug}`}>
+          <Link href={`/posts/${item.slug}`}>
             <h1>{item.title}</h1>
           </Link>
-          <p className=''>{item.content.substring(0, 60)}</p> */}
+          <p className=''>{item.content.substring(0, 60)}</p>
           {/* <div
             className="text-lg font-light text-gray-700"
             dangerouslySetInnerHTML={{ __html: item?.content.substring(0, 60) }}
@@ -50,4 +50,4 @@ const Card = ({ key, item }: PropsType) => {
   );
 };
 
-export default Card;
+export default BlogCard;
