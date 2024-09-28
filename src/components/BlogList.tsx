@@ -6,13 +6,13 @@ type PropsType = {
   category?: string;
 };
 
-const getBlogs = async(page:number, category: string) => {
+const getBlogs = async (page: number, category: string) => {
   const res = await fetch(`http://localhost:5000/api/blogs`, {
-    method: 'GET'
-  })
+    method: "GET",
+  });
   const data = await res.json();
-  return data.data
-}
+  return data.data;
+};
 
 // const postBlog = async() => {
 //   const res = await fetch(`http://localhost:5000/api/blogs`, {
@@ -36,7 +36,7 @@ const getBlogs = async(page:number, category: string) => {
 // }
 
 const BlogList = async ({ page, category = "" }: PropsType) => {
-  const blogs = await getBlogs(page, category)
+  const blogs = await getBlogs(page, category);
   // const blog = await postBlog()
   // console.log(blogs)
   const count = 10;

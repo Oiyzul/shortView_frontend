@@ -27,7 +27,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,7 +53,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -63,4 +63,52 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* .editor {
+  margin: 1rem 4rem;
+  background: #f3f1f2;
+  font-family: sans-serif;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  background: #fefcfc;
+} */
+
+/* .editor .ql-container {
+
+} */
+
+/* Snow Theme */
+/* .ql-toolbar {
+  display: block;
+  margin: auto !important;
+  background: #eaecec;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  margin-left: 100px !important;
+  background-color: beige;
+} */
+/* .ql-tooltip-editor {
+  background-color: beige !important;;
+  color: #fff;
+} */
+
+/* Bubble Theme */
+/* .editor .ql-bubble .ql-editor {
+  
+} */
+
+.ql-editor {
+  min-height: 20em;
+  width: 100%;
+  /* padding: 0 !important; */
+}
+
+.ql-container{
+  font-size: 20px !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  color: #b3b3b1;
 }

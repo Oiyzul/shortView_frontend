@@ -3,7 +3,7 @@ import Image from "next/image";
 const Featured = async() => {
   const blog = await fetch(`http://localhost:5000/api/blogs`)
    .then((res) => res.json())
-   console.log(blog.data[0])
+   
    const {title, content, imgUrl} = blog.data[0]
 
   return <div className='mt-8'>

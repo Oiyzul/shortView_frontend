@@ -1,8 +1,9 @@
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <MaxWidthWrapper>
           <Navbar />
           {children}
+          <Toaster />
         </MaxWidthWrapper>
       </body>
     </html>

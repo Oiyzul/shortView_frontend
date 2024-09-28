@@ -1,20 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type PropsType = {
-  key: string;
-  item: {
-    _id: string;
-    title: string;
-    content: string;
-    author: string;
-    createdAt: string;
-    imgUrl: string
-    slug: string;
-    catSlug: string;
-  };
-};
-const BlogCard = ({ item }: PropsType) => {
+
+const BlogCard = ({ item }) => {
   return (
     <div>
       <div className="mb-12 flex items-center gap-12" key={item._id}>
@@ -28,9 +16,9 @@ const BlogCard = ({ item }: PropsType) => {
             <span className="text-gray-500">
               {item.createdAt.substring(0, 10)} -{" "}
             </span>
-            <span className="">{item.catSlug}</span>
+            <span className="">{item.param}</span>
           </div>
-          <Link href={`/posts/${item.slug}`}>
+          <Link href={`/blogs/${item.param}`}>
             <h1>{item.title}</h1>
           </Link>
           <p className=''>{item.content.substring(0, 60)}</p>
@@ -39,7 +27,7 @@ const BlogCard = ({ item }: PropsType) => {
             dangerouslySetInnerHTML={{ __html: item?.content.substring(0, 60) }}
           /> */}
           <Link
-            href={`/posts/${item.slug}`}
+            href={`/blogs/${item.param}`}
             className="border-b-[1px] w-max py-0.5"
           >
             Read More
